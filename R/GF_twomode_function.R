@@ -299,7 +299,7 @@ GF_twomode<-function(g,event_attribute,actor_attribute){
     COOR_RES_G1<-tibble::as_tibble(COOR_RES_G1)
 
     COOR_RES_G2<-stats::ftable(COOR_RES_G1)
-    COOR_RES_G2<-tibble::as_data_frame(COOR_RES_G2)
+    COOR_RES_G2<-tibble::as_tibble(COOR_RES_G2)
     colnames(COOR_RES_G2)<-c("Broker","GenderCombo","BrokerSector","Freq")
     COOR_RES_G2<-dplyr::filter(COOR_RES_G2,Freq!=0)
     #COOR_RES_G2$Role<-rep("Coordinator",length(COOR_RES_G2$Freq))
@@ -467,5 +467,5 @@ GF_twomode<-function(g,event_attribute,actor_attribute){
 
   RESULTS_LIST<-list(COOR_RES_G3,REP_RES_G3,ITIN_RES_G3,LIA_RES_G3)
   GF_LIST<-list(BROKERAGE_PATH_LIST,RESULTS_LIST,TOTAL_DF)
-  return(TOTAL_DF)
+  return(GF_LIST)
 }
